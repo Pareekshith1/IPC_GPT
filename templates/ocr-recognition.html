@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OCR Recognition</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="static/css/styles.css" />
+  <style>
+    /* Optional inline for better OCR text formatting */
+    #ocrOutput {
+      white-space: pre-wrap;
+      min-height: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4">Upload Image or PDF</h2>
+    <form id="uploadForm" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="fileType" class="form-label">Select File Type:</label>
+        <select class="form-select" id="fileType" name="fileType">
+          <option value="image">Image</option>
+          <option value="pdf">PDF</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="fileUpload" class="form-label">Upload File:</label>
+        <input type="file" class="form-control" id="fileUpload" name="file" />
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <div id="output" class="mt-4">
+      <label for="ocrOutput" class="form-label">Text output will be displayed here:</label>
+
+      <div id="loadingAnimation" style="display: none; margin-bottom: 1rem;">
+        <img src="static/images/loading.gif" alt="Loading..." />
+      </div>
+
+      <pre id="ocrOutput" class="form-control"></pre>
+
+      <div id="generatedOutput" class="mt-4"></div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="static/js/upload.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
