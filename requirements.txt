@@ -1,0 +1,6 @@
+Flask
+pytesseract
+pdf2image
+pillow
+pandas
+torch
